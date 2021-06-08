@@ -1,0 +1,28 @@
+<h2>Listado de usuarios</h2>
+
+<a href="/api/usuarios/add" class="btn btn-primary"> <i class="fa fa-plus">Agregar Usuario</i></a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each usuarios}}
+        
+        <tr>
+            <td>{{this.nombre}}</td>
+            <td>{{this.apellido}}</td>
+            <td>{{this.email}}</td>
+            <td>
+                <a href="/api/usuarios/edit/{{this._id}}"><i class="fa fa-edit"></i></a>
+                <a href="/api/usuarios/delete/{{this._id}}"><i class="fa fa-trash"></i> </a>
+                <a href="/api/domicilios/{{this.domicilio_id}}">Editar Domicilio</a> 
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>    

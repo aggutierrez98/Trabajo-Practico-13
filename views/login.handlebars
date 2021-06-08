@@ -1,0 +1,12 @@
+<h2>Usuario Login</h2>
+
+<form method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" value="{{obj.email}}" class="form-control" required="true">
+      <label for="password">Contraseña</label>
+      <input type="password" name="password" id="password" value="{{obj.password}}" class="form-control" required="true">
+    </div>
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+    <a href="/">Cancelar</a>
+</form>

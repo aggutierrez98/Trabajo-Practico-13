@@ -1,0 +1,12 @@
+<h2>Edición de usuarios</h2>
+
+<form method="POST">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" value="{{obj.nombre}}" class="form-control" required="true">
+      <label for="apellido">Apellido</label>
+      <input type="text" name="apellido" id="apellido" value="{{obj.apellido}}" class="form-control" required="true">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="/api/usuarios">Cancelar</a>
+</form>

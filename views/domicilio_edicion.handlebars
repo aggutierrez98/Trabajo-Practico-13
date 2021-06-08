@@ -1,0 +1,12 @@
+<h2>Edición de domicilio</h2>
+
+<form method="POST">
+    <div class="form-group">
+      <label for="calle">Calle</label>
+      <input type="text" name="calle" id="calle" value="{{obj.calle}}" class="form-control" required="true">
+      <label for="numero">Numero</label>
+      <input type="number" name="numero" id="numero" value="{{obj.numero}}" class="form-control" required="true">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="/api/usuarios">Cancelar</a>
+</form>
