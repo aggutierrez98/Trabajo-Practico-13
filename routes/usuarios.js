@@ -1,19 +1,13 @@
 const { Router } = require("express");
 const { check } = require("express-validator");
 const { validarCampos } = require("../middlewares/validar-campos");
-const { validarJWT, validateJWT } = require("../middlewares/validar-jwt");
+const { validarJWT } = require("../middlewares/validar-jwt");
 const { getUsuarios, postUsuario, putUsuario, deleteUsuario, getUsuarioPost, putUsuarioGet } = require('../controllers/usuarios');
 const { existeUsuarioPorId, emailExiste } = require("../helpers/db-validators");
 
 const router = Router();
 
-router.get("/jwt", [
-    validarJWT
-], (req, res) => {
-    res.redirect("/api/usuarios")
-});
-
-router.get("/", getUsuarios);
+router.get("/", validarJWT, getUsuarios);
 
 router.get("/add", getUsuarioPost);
 

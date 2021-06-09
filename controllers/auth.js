@@ -25,7 +25,7 @@ const login = async(req, res = response) => {
         const token = await generarJWT(usuario._id);
 
         // res.redirect(`http://localhost:8080/api/usuarios/jwt/?token=${token}`)
-        res.redirect(`https://utntp13.herokuapp.com/api/usuarios/jwt/?token=${token}`)
+        res.redirect(`https://utntp13.herokuapp.com/api/usuarios/?token=${token}`)
 
     } catch (e) {
         console.log(e)
