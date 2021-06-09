@@ -4,7 +4,7 @@ const Usuario = require("../models/usuario")
 
 const validarJWT = async(req = request, res = response, next) => {
 
-    const token = req.query.token
+    const token = req.cookies['token'];
 
     if (!token) {
         const error = {

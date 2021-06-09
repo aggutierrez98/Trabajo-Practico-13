@@ -9,7 +9,7 @@ const router = Router();
 
 router.get("/", validarJWT, getUsuarios);
 
-router.get("/add", getUsuarioPost);
+router.get("/add", validarJWT, getUsuarioPost);
 
 router.post("/add", [
     check("email", "El correo no es valido").isEmail(),
@@ -23,6 +23,7 @@ router.post("/add", [
 ], postUsuario);
 
 router.get("/edit/:id", [
+    validarJWT,
     check("id").custom(existeUsuarioPorId),
     validarCampos
 ], putUsuarioGet);
@@ -33,6 +34,7 @@ router.post("/edit/:id", [
 ], putUsuario);
 
 router.get("/delete/:id", [
+    validarJWT,
     check("id").custom(existeUsuarioPorId),
     validarCampos
 ], deleteUsuario);

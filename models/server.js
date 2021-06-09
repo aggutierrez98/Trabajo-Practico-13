@@ -6,6 +6,7 @@ const cors = require("cors");
 const { dbConnection } = require('../database/connection');
 const handlebars = require('express-handlebars').create({ 'defaultLayout': 'main' });
 var body_parser = require("body-parser");
+const cookieParser = require('cookie-parser');
 
 
 class Server {
@@ -37,6 +38,7 @@ class Server {
         //Configuracion de body parser necesaria para pasar informacion por el body por el metodo POST
         this.app.use(body_parser.urlencoded({ extended: false }));
         this.app.use(body_parser.json());
+        this.app.use(cookieParser());
 
         this.app.engine('handlebars', handlebars.engine);
         this.app.set('view engine', 'handlebars');
