@@ -11,7 +11,6 @@ const login = async(req, res = response) => {
 
         const usuario = await Usuario.findOne({ correo });
 
-
         //Verificar contraseña
         const validPassword = bcryptjs.compareSync(password, usuario.password);
         if (!validPassword) {

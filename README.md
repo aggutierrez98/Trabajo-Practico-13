@@ -2,3 +2,6 @@
 Recordar para instalar npm install
 
 Se crea un JWT que se pasa mediante los coockies al cliente, el server lo busca y lo valida para cada operacion
+
+# Posibles mejoras: 
+Mejora visual del cliente
