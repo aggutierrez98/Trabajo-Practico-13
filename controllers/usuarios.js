@@ -11,7 +11,6 @@ const getUsuarios = async(req, res) => {
 }
 
 
-
 const getUsuario = async(req, res) => {
 
     const { id } = req.params;
@@ -51,6 +50,7 @@ const postUsuario = async(req, res) => {
 
         //Encriptar la contraseña
         const salt = bcryptjs.genSaltSync();
+
         usuario.password = bcryptjs.hashSync(usuario.password, salt);
 
         await usuario.save();

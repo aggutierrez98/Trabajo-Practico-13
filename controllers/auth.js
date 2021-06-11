@@ -5,12 +5,12 @@ const { generarJWT } = require("../helpers/generar-jwt");
 
 const login = async(req, res = response) => {
 
-    const { correo, password } = req.body;
+    const { email, password } = req.body;
 
     try {
 
-        const usuario = await Usuario.findOne({ correo });
-        console.log(usuario.password);
+        const usuario = await Usuario.findOne({ email });
+
         //Verificar contraseña
         const validPassword = bcryptjs.compareSync(password, usuario.password);
         if (!validPassword) {
@@ -35,11 +35,18 @@ const login = async(req, res = response) => {
     }
 }
 
+const logout = async(req, res = response) => {
+
+    res.clearCookie('token');
+    res.redirect('/');
+}
+
 const loginGet = (req, res = response) => {
     res.render('login', { obj: {} });
 }
 
 module.exports = {
     login,
-    loginGet
+    loginGet,
+    logout
 }

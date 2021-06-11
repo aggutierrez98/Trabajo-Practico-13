@@ -1,8 +1,6 @@
 <h2>Listado de usuarios</h2>
-
-<a href="/api/usuarios/add" class="btn btn-primary"> <i class="fa fa-plus">Agregar Usuario</i></a>
-
 <table>
+
     <thead>
         <tr>
             <th>Nombre</th>
@@ -10,6 +8,7 @@
             <th>Email</th>
         </tr>
     </thead>
+
     <tbody>
         {{#each usuarios}}
         
@@ -23,6 +22,14 @@
                 <a href="/api/domicilios/{{this.domicilio_id}}">Editar Domicilio</a> 
             </td>
         </tr>
+
         {{/each}}
+
     </tbody>
+    
 </table>    
+<br>
+<h5>Si se borra el mismo usuario con el que ingreso te sacara de la sesion</h5>
+
+<a href="/api/auth/logout" class="btn btn-primary"> Logout</i></a>
+
