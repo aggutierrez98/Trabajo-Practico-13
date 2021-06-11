@@ -10,7 +10,7 @@ const login = async(req, res = response) => {
     try {
 
         const usuario = await Usuario.findOne({ correo });
-
+        console.log(usuario.password);
         //Verificar contraseña
         const validPassword = bcryptjs.compareSync(password, usuario.password);
         if (!validPassword) {
