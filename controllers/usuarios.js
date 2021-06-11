@@ -55,7 +55,7 @@ const postUsuario = async(req, res) => {
 
         await usuario.save();
 
-        res.redirect('/api/usuarios');
+        res.redirect('/');
 
     } catch (error) {
         console.log(error);
