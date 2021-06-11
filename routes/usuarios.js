@@ -9,7 +9,7 @@ const router = Router();
 
 router.get("/", validarJWT, getUsuarios);
 
-router.get("/add", validarJWT, getUsuarioPost);
+router.get("/add", getUsuarioPost);
 
 router.post("/add", [
     check("email", "El correo no es valido").isEmail(),
